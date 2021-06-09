@@ -10,8 +10,8 @@ class Rate(models.Model):
 
 
 class ContactUS(models.Model):
-    id = models.CharField(max_length=5)
-    email_from = models.CharField(max_length=64)
-    subject = models.DecimalField(max_digits=5, decimal_places=2)
-    message = models.DecimalField(max_digits=5, decimal_places=2)
+    # id no need to describe
+    email_from = models.EmailField(max_length=254)
+    subject = models.CharField(max_length=64)
+    message = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
