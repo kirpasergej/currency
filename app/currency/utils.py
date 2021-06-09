@@ -13,8 +13,6 @@ def generate_password(length: int = 10) -> str:
     return password
 
 
-
-
 def hello_world():
 
     return 'Hello World'

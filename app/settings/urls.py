@@ -7,5 +7,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('gen-pass/', generate_password),
     path('hello_world/', hello_world),
-
 ]
