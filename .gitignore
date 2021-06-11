@@ -127,8 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-<<<<<<< HEAD
-=======
 app/db.sqlite3
->>>>>>> 755b29b99c3cdbfa8325ee46481b55db9f71bcc0
 .idea/
