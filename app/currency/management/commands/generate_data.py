@@ -5,7 +5,6 @@ from currency.models import Rate
 
 
 class Command(BaseCommand):
-    help = 'Generate Random records'
 
     def handle(self, *args, **options):
         for index in range(100):
