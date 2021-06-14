@@ -13,6 +13,6 @@ urlpatterns = [
     path('currency/rate/list/', rate_list),
     path('currency/rate/details/<int:pk>/', rate_details),
     path('currency/source/details/<int:pk>/', source_details),
-    path('currency/source/details/<int:pk>/', source_list),
+    path('currency/source/list/', source_list),
 
 ]

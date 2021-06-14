@@ -5,15 +5,22 @@
     <title>Title</title>
 </head>
 <body>
+<table border="1" width="100%" cellpadding="5">
+  <tr>
+    <th>ID:</th>
+    <th>Name:</th>
+    <th>Url:</th>
+    <th>Phone:</th>
+    </tr>
+    {% for source in objects %}
+    <tr>
+    <td>{{source.id}}</td>
+    <td>{{source.name}}</td>
+    <td>{{source.url}}</td>
+    <td>{{source.phone}}</td>
+    {% endfor %}
+   </tr>
+ </table>
 
-{% for source in objects %}
-    <p>
-        ID: {{source.id}}
-        Name: {{source.name}}
-        Url: {{source.url}}
-        Phone: {{source.phone}}
-    </p>
-
-{% endfor %}
 </body>
 </html>
