@@ -4,6 +4,7 @@ from currency.utils import generate_password as gp
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from currency.models import Rate
+from currency.models import Source
 
 
 def generate_password(request):
@@ -32,3 +33,22 @@ def rate_details(request, pk):
         'object': rate,
     }
     return render(request, 'rate_details.html', context=cont)
+
+
+def source_list(request):
+    queryset = Source.objects.all()
+
+    cont = {
+
+        'objects': queryset,
+    }
+
+    return render(request, 'source_list.html', context=cont)
+
+
+def source_details(request, pk):
+    source = get_object_or_404(Source, pk=pk)
+    cont = {
+        'object': source,
+    }
+    return render(request, 'source_details.html', context=cont)
