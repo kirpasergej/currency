@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from currency.utils import generate_password as gp
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from currency.models import Rate
 from currency.models import Source
@@ -52,3 +52,32 @@ def source_details(request, pk):
         'object': source,
     }
     return render(request, 'source_details.html', context=cont)
+
+
+def rate_create(request):
+    from currency.forms import RateForm
+
+    if request.method == "POST":
+        form_data = request.POST
+        form = RateForm(form_data)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/currency/rate/list')
+    elif request.method == "GET":
+        form = RateForm()
+    form = RateForm()
+    cont = {
+        'message': "Rate Create",
+        'form': form,
+    }
+    return render(request, 'rate_create.html', context=cont)
+
+
+def source_create(request):
+    from currency.forms import SourceForm
+    form = SourceForm()
+    cont = {
+        'message': "Source Create",
+        'form': form,
+    }
+    return render(request, 'source_create.html', context=cont)
