@@ -15,3 +15,10 @@ class ContactUS(models.Model):
     subject = models.CharField(max_length=64)
     message = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
+
+
+class Source(models.Model):
+    name = models.CharField(max_length=64)
+    url = models.URLField()
+    phone = models.PositiveIntegerField()
+    created = models.DateTimeField(auto_now_add=True)

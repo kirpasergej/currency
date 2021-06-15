@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" width="100%" cellpadding="5">
+  <tr>
+    <th>ID:</th>
+    <th>Buy:</th>
+    <th>Sale:</th>
+    </tr>
+    {% for rate in objects %}
+    <tr>
+    <td>{{rate.id}}</td>
+    <td>{{rate.buy}}</td>
+    <td>{{rate.sale}}</td>
+    {% endfor %}
+   </tr>
+ </table>
+
+
+</body>
+</html>
