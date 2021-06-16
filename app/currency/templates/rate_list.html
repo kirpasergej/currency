@@ -11,12 +11,15 @@
     <th>ID:</th>
     <th>Buy:</th>
     <th>Sale:</th>
+    <th>Update:</th>
+
     </tr>
     {% for rate in objects %}
     <tr>
     <td>{{rate.id}}</td>
     <td>{{rate.buy}}</td>
     <td>{{rate.sale}}</td>
+    <td><a href="/currency/rate/update/{{rate.id}}/">Edit</a></td>
     </tr>
     {% endfor %}
  </table>

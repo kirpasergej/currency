@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from currency.models import Rate
 from currency.models import Source
+from currency.forms import RateForm
 
 
 def generate_password(request):
@@ -55,8 +56,6 @@ def source_details(request, pk):
 
 
 def rate_create(request):
-    from currency.forms import RateForm
-
     if request.method == "POST":
         form_data = request.POST
         form = RateForm(form_data)
@@ -81,3 +80,21 @@ def source_create(request):
         'form': form,
     }
     return render(request, 'source_create.html', context=cont)
+
+
+def rate_update(request, pk):
+    instance = get_object_or_404(Rate, pk=pk)
+
+    if request.method == "POST":
+        form_data = request.POST
+        form = RateForm(form_data, instance=instance)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/currency/rate/list')
+    elif request.method == "GET":
+        form = RateForm(instance=instance)
+
+    cont = {
+        'form': form,
+    }
+    return render(request, "rate_update.html", context=cont)
