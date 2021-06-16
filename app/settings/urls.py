@@ -4,7 +4,7 @@ from currency.views import generate_password
 from currency.views import rate_list
 from currency.views import rate_details
 from currency.views import source_list
-from currency.views import source_details, rate_create, source_create, rate_update
+from currency.views import source_details, rate_create, source_create, rate_update, rate_delete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -16,5 +16,6 @@ urlpatterns = [
     path('currency/rate/create/', rate_create),
     path('currency/source/create/', source_create),
     path('currency/rate/update/<int:pk>/', rate_update),
+    path('currency/rate/delete/<int:pk>/', rate_delete),
 
 ]

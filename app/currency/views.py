@@ -6,6 +6,7 @@ from django.shortcuts import get_object_or_404
 from currency.models import Rate
 from currency.models import Source
 from currency.forms import RateForm
+from annoying.functions import get_object_or_None
 
 
 def generate_password(request):
@@ -98,3 +99,10 @@ def rate_update(request, pk):
         'form': form,
     }
     return render(request, "rate_update.html", context=cont)
+
+
+def rate_delete(request, pk):
+    instance = get_object_or_None(Rate, pk=pk)
+    if instance is not None:
+        instance.delete()
+    return HttpResponseRedirect('/currency/rate/list')
