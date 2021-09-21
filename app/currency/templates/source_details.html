@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-<p>ID: {{ object.id }}</p>
-<p>Name: {{ object.name }}</p>
-<p>Url: {{ object.url }}</p>
-<p>Phone: {{ object.phone }}</p>
+{% block main_content %}
 
-</body>
-</html>
+    <p>ID: {{ object.id }}</p>
+    <p>Name: {{ object.name }}</p>
+    <p>Url: {{ object.url }}</p>
+    <p>Phone: {{ object.phone }}</p>
+
+{% endblock main_content %}
