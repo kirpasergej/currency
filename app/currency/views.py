@@ -13,6 +13,8 @@ def generate_password(request):
     password = gp()
     return HttpResponse(password)
 
+def index(request):
+    return render(request,'index.html')
 
 def rate_list(request):
     queryset = Rate.objects.all()

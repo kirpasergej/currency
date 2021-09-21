@@ -5,11 +5,12 @@ from currency.views import (
     rate_list, rate_details,
     rate_create, rate_update, rate_delete,
     source_list, source_details, source_create,
-    source_update, source_delete
+    source_update, source_delete, index,
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index),
     path('gen-pass/', generate_password),
 
     path('currency/rate/list/', rate_list),

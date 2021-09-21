@@ -1,29 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<a href="/currency/rate/create/">Create Rate</a>
-<table border="1" width="100%" cellpadding="5">
-  <tr>
-    <th>ID:</th>
-    <th>Buy:</th>
-    <th>Sale:</th>
-    <th>Update:</th>
+{% extends 'base.html' %}
 
-    </tr>
-    {% for rate in objects %}
+{% block main_content %}
+  <a href="/currency/rate/create/">Create Rate</a>
+
+  <table border="1" width="100%" cellpadding="5">
     <tr>
-    <td>{{rate.id}}</td>
-    <td>{{rate.buy}}</td>
-    <td>{{rate.sale}}</td>
-    <td><a href="/currency/rate/update/{{rate.id}}/">Edit</a></td>
-    </tr>
-    {% endfor %}
- </table>
+      <th>ID:</th>
+      <th>Buy:</th>
+      <th>Sale:</th>
+      <th>Update:</th>
 
+      </tr>
+      {% for rate in objects %}
+      <tr>
+      <td>{{rate.id}}</td>
+      <td>{{rate.buy}}</td>
+      <td>{{rate.sale}}</td>
+      <td><a href="/currency/rate/update/{{rate.id}}/">Edit</a></td>
+      </tr>
+      {% endfor %}
+   </table>
 
-</body>
-</html>
+{% endblock main_content %}

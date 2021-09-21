@@ -1,28 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<a href="/currency/source/create/">Create Source</a>
-<table border="1" width="100%" cellpadding="5">
-  <tr>
-    <th>ID:</th>
-    <th>Name:</th>
-    <th>Url:</th>
-    <th>Phone:</th>
-    <th>Edit:</th>
-    </tr>
-    {% for source in objects %}
-    <tr>
-    <td>{{source.id}}</td>
-    <td>{{source.name}}</td>
-    <td><a href="{{source.url}}">{{source.url}}<a></td>
-    <td>{{source.phone}}</td><td><a href="/currency/source/update/{{source.id}}/">Edit</a></td>
-    </tr>
-    {% endfor %}
- </table>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block main_content %}
+
+  <a href="/currency/source/create/">Create Source</a>
+  <table border="1" width="100%" cellpadding="5">
+    <tr>
+      <th>ID:</th>
+      <th>Name:</th>
+      <th>Url:</th>
+      <th>Phone:</th>
+      <th>Edit:</th>
+      </tr>
+      {% for source in objects %}
+      <tr>
+      <td>{{source.id}}</td>
+      <td>{{source.name}}</td>
+      <td><a href="{{source.url}}">{{source.url}}<a></td>
+      <td>{{source.phone}}</td><td><a href="/currency/source/update/{{source.id}}/">Edit</a></td>
+      </tr>
+      {% endfor %}
+   </table>
+
+{% endblock main_content %}
